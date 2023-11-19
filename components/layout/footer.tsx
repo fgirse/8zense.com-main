@@ -48,7 +48,7 @@ const Footer = () => {
           <a
             href="https://www.glazestock.com/"
             target="_blank"
-            rel="noopener ">
+            rel="noreferrer ">
            4058 Basel🇨🇭
           </a>
         </div>
