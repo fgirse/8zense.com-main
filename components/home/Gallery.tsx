@@ -1,3 +1,5 @@
+"use client"
+
 import { Gallery } from "react-grid-gallery";
 import { images as IMAGES } from "../../content/homepage/photo";
 
@@ -19,7 +21,7 @@ const images = IMAGES.map((image) => ({
 export default function App() {
   return (
     <div className="h-60 gap-12">
-      <h1 className="mb-5 text-[4rem] text-stone-800">Galllerie</h1>
+      <h1 className="text-center mt-12 text-amber-400 mb-5 text-[3.66rem] ">Galllerie</h1>
       <Gallery images={images} enableImageSelection={false} />
     </div>
   );

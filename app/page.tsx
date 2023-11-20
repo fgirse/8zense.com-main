@@ -5,6 +5,7 @@ import WebVitals from "@/components/home/web-vitals";
 import ComponentGrid from "@/components/home/component-grid";
 import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
+import Galery from"..//components/home/Gallery";
 
 export default async function Home() {
   const { stargazers_count: stars } = await fetch(
@@ -19,7 +20,7 @@ export default async function Home() {
       // data will revalidate every 24 hours
       next: { revalidate: 86400 },
     },
-  )
+  )     
     .then((res) => res.json())
     .catch((e) => console.log(e));
 
@@ -30,7 +31,7 @@ export default async function Home() {
       <div className="grid grid-cols-12 grid-rows-9 gap-4">
     <div className="col-span-6 row-span-2">
     <h1
-          className="uppercase font-black animate-fade-up bg-gradient-to-br from-amber-500 to-stone-300 bg-clip-text text-left font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm [text-wrap:balance] md:text-7xl md:leading-[5rem]"
+          className="uppercase font-black animate-fade-up bg-gradient-to-br from-amber-500 to-stone-300 bg-clip-text text-left font-display text-4xl tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm [text-wrap:balance] md:text-7xl md:leading-[5rem]"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           Timeless Design
@@ -38,39 +39,46 @@ export default async function Home() {
 
 
     </div>
-    <div className="col-span-5 row-span-2 col-start-8 text-[.55rem] text-slate-800"                                  >&aquo; the beauty of a living thing is not the atoms that go into it -but the way those atoms are put together.&raquo;</div>
+    <div className="col-span-5 row-span-2 col-start-8 text-[.55rem] text-slate-800" >&aquo; the beauty of a living thing is not the atoms that go into it -but the way those atoms are put together.&raquo;</div>
     <div className="col-start-7 row-start-2"> 
     <p className="text-[.5rem] py-1 text-white bg-orange-400 rounded-full w-9 h-9 text-center">John<br/>Stuart</p>
     </div>
-    <div className="col-span-8 row-span-3 col-start-3 row-start-3">
+    <div className="w-[80vw] col-span-8 row-span-3 col-start-3 row-start-3">
       <Image src="/images/sideboardobg.png" alt="sideboard" width="450" height="300"/>
     </div>
     <div className="col-span-6 row-span-4 col-start-4 row-start-6">
-    <div className="col-span-8 row-span-3 col-start-3 row-start-3 w-6">
-      <Image className="rounded-xl shadow-2xl " src="/images/LogoEZ.png" alt="Logo 8zense.com" width="450" height="300"/>
+    <div className="mx-auto flex flex-col items-center justify-center w-[40vw] col-span-8 row-span-3 col-start-3 row-start-3 ">
+      <Image className="rounded-xl shadow-2xl " src="/images/logoEZ.png" alt="Logo 8zense.com" width="450" height="450"/>
     </div>
 
     </div>
 </div>
-    
 
-
-
-
-        <a
+<a
           href="https://twitter.com/steventey/status/1613928948915920896"
           target="_blank"
           rel="noreferrer"
-          className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
+          className="mt-20 mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
         >
           <Twitter className="h-5 w-5 text-[#1d9bf0]" />
           <p className="text-sm font-semibold text-[#1d9bf0]">
             Introducing Precedent
           </p>
         </a>
-      
-    
-        <div
+        <div className="flex flex-row items-stretch">
+        <a
+            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
+            href="https://github.com/steven-tey/precedent"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github />
+            <p>
+              <span className="hidden sm:inline-block">Star on</span> GitHub{" "}
+              <span className="font-semibold">{nFormatter(stars)}</span>
+            </p>
+          </a> 
+          <div
           className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
           style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
         >
@@ -96,19 +104,17 @@ export default async function Home() {
             </svg>
             <p>Deploy to Vercel</p>
           </a>
-          <a
-            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
-            href="https://github.com/steven-tey/precedent"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Github />
-            <p>
-              <span className="hidden sm:inline-block">Star on</span> GitHub{" "}
-              <span className="font-semibold">{nFormatter(stars)}</span>
-            </p>
-          </a>
-        </div>
+          </div>
+        </div>         
+    <Galery/>
+
+
+
+
+    
+      
+    
+        
       </div>
       <div className="my-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-3 xl:px-0">
         {features.map(({ title, description, demo, large }) => (
