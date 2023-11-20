@@ -47,8 +47,8 @@ const Footer = () => {
            <span className="text-white font-phudu">MEDICUS DESIGN{" "}</span>
           <a
             href="https://www.glazestock.com/"
-            target="_blank"rel="noopener ">
-           4058 Basel🇨🇭
+            target="_blank"rel="noreferrer">
+           4058 Basel🇨🇭 
           </a>
         </div>
       </div>
