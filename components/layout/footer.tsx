@@ -13,7 +13,7 @@ const Footer = () => {
   const { copyright } = config.params;
 
   return (
-    <footer className="bg-[##4A4C4B] dark:bg-darkmode-theme-light">
+    <footer className="bg-slate-800                    dark:bg-darkmode-theme-light">
       <div className="container">
         <div className="row items-center py-10">
           <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:text-left">
@@ -28,8 +28,8 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:mt-0 lg:text-right">
-            <Social source={social.main} className="social-icons" />
+          <div className="mb-8 textslate-300 text-center lg:col-3 lg:mb-0 lg:mt-0 lg:text-right">
+            <Social source={social.main} className="social-icons text-slate-300 hover:text-amber-500" />
           </div>
         </div>
       </div>
@@ -47,8 +47,9 @@ const Footer = () => {
            <span className="text-white font-phudu">MEDICUS DESIGN{" "}</span>
           <a
             href="https://www.glazestock.com/"
-            target="_blank"rel="noreferrer">
-           4058 Basel🇨🇭 
+            target="_blank"
+            rel="noreferrer ">
+           4058 Basel🇨🇭
           </a>
         </div>
       </div>
@@ -56,4 +57,4 @@ const Footer = () => {
   );
 };
 
-export default Footer
+export default Footer;
