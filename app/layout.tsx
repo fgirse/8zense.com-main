@@ -5,7 +5,7 @@ import { sfPro, inter } from "./fonts";
 import Nav from "@/components/layout/nav";
 import Footer from "../components/layout/footer";
 import { Suspense } from "react";
-
+import { SessionProvider } from "next-auth/react";
 
 export const metadata = {
   title: "8-zense.com",
@@ -24,6 +24,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={cx(sfPro.variable, inter.variable)}>
         <div className="fixed h-screen w-full bg-[url('/images/gitter.png')] opacity-10 bg-contain repeat" />
+        <SessionProvider>
         <Suspense fallback="...">
           <Nav />
        
@@ -33,6 +34,7 @@ export default async function RootLayout({
            <Footer />
         <Analytics />
         </Suspense>
+        </SessionProvider>
       </body>
     </html>
   );
