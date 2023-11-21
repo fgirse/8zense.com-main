@@ -12,7 +12,7 @@ export const metadata = {
   description:
     "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
   metadataBase: new URL("https://precedent.dev"),
-  themeColor: "#FFF",
+  themeColor: "#130835",
 };
 
 export default async function RootLayout({
@@ -26,12 +26,13 @@ export default async function RootLayout({
         <div className="fixed h-screen w-full bg-[url('/images/gitter.png')] opacity-10 bg-contain repeat" />
         <Suspense fallback="...">
           <Nav />
-        </Suspense>
+       
         <main className="flex min-h-screen w-full flex-col items-center justify-center py-20">
           {children}
         </main>
            <Footer />
         <Analytics />
+        </Suspense>
       </body>
     </html>
   );
